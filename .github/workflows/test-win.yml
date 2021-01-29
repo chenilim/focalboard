@@ -1,0 +1,19 @@
+name: Test-Windows
+
+on: workflow_dispatch
+
+jobs:
+
+  windows:
+    runs-on: windows-latest
+
+    steps:
+    - name: Check versions
+      run: |
+        $host.version
+        make -v
+        where.exe make
+        Get-Command make
+
+    - name: ls
+      run: ls
